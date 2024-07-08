@@ -46,7 +46,7 @@ public class ToolRentalControllerIntegrationTest {
     @DisplayName("Test 1")
     public void validateTest1() throws Exception {
         CheckoutRequest cr = requestHelper.getCR1();
-        client.post().uri("/tool_rental_service/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
+        client.post().uri("/tool_rental_service/v1/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
                 .expectStatus().isBadRequest().expectBody().jsonPath("statusName").isEqualTo("BAD_REQUEST").jsonPath("$.fieldCode.discountPercent").isEqualTo("discountPercent cannot be greater than 100");
 
     }
@@ -55,7 +55,7 @@ public class ToolRentalControllerIntegrationTest {
     @DisplayName("Test 2")
     public void validateTest2() throws Exception {
         CheckoutRequest cr = requestHelper.getCR2();
-        client.post().uri("/tool_rental_service/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
+        client.post().uri("/tool_rental_service/v1/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
                 .expectStatus().isOk().expectBody().jsonPath("code").isEqualTo("LADW").jsonPath("type").isEqualTo("Ladder")
                 .jsonPath("brand").isEqualTo("Werner").jsonPath("rentalDays").isEqualTo(3)
                 .jsonPath("checkoutDate").isEqualTo("07/02/20").jsonPath("dueDate").isEqualTo("07/05/20")
@@ -67,7 +67,7 @@ public class ToolRentalControllerIntegrationTest {
     @DisplayName("Test 3")
     public void validateTest3() throws Exception {
         CheckoutRequest cr = requestHelper.getCR3();
-        client.post().uri("/tool_rental_service/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
+        client.post().uri("/tool_rental_service/v1/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
                 .expectStatus().isOk().expectBody().jsonPath("code").isEqualTo("CHNS").jsonPath("type").isEqualTo("Chainsaw")
                 .jsonPath("brand").isEqualTo("Stihl").jsonPath("rentalDays").isEqualTo(5)
                 .jsonPath("checkoutDate").isEqualTo("07/02/15").jsonPath("dueDate").isEqualTo("07/07/15")
@@ -80,7 +80,7 @@ public class ToolRentalControllerIntegrationTest {
     @DisplayName("Test 4")
     public void validateTest4() throws Exception {
         CheckoutRequest cr = requestHelper.getCR4();
-        client.post().uri("/tool_rental_service/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
+        client.post().uri("/tool_rental_service/v1/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
                 .expectStatus().isOk().expectBody().jsonPath("code").isEqualTo("JAKD").jsonPath("type").isEqualTo("Jackhammer")
                 .jsonPath("brand").isEqualTo("DeWalt").jsonPath("rentalDays").isEqualTo(6)
                 .jsonPath("checkoutDate").isEqualTo("09/03/15").jsonPath("dueDate").isEqualTo("09/09/15")
@@ -93,7 +93,7 @@ public class ToolRentalControllerIntegrationTest {
     @DisplayName("Test 5")
     public void validateTest5() throws Exception {
         CheckoutRequest cr = requestHelper.getCR5();
-        client.post().uri("/tool_rental_service/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
+        client.post().uri("/tool_rental_service/v1/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
                 .expectStatus().isOk().expectBody().jsonPath("code").isEqualTo("JAKR").jsonPath("type").isEqualTo("Jackhammer")
                 .jsonPath("brand").isEqualTo("Ridgid").jsonPath("rentalDays").isEqualTo(9)
                 .jsonPath("checkoutDate").isEqualTo("07/02/15").jsonPath("dueDate").isEqualTo("07/11/15")
@@ -106,7 +106,7 @@ public class ToolRentalControllerIntegrationTest {
     @DisplayName("Test 6")
     public void validateTest6() throws Exception {
         CheckoutRequest cr = requestHelper.getCR6();
-        client.post().uri("/tool_rental_service/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
+        client.post().uri("/tool_rental_service/v1/checkout").contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(cr)).exchange()
                 .expectStatus().isOk().expectBody().jsonPath("code").isEqualTo("JAKR").jsonPath("type").isEqualTo("Jackhammer")
                 .jsonPath("brand").isEqualTo("Ridgid").jsonPath("rentalDays").isEqualTo(4)
                 .jsonPath("checkoutDate").isEqualTo("07/02/20").jsonPath("dueDate").isEqualTo("07/06/20")
