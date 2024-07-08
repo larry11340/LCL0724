@@ -1,7 +1,9 @@
 # LCL0724
 This is sample Tool Rental Service application
 Steps to compile and run
- JavaLanguageVersion.of(21)
+
+JavaLanguageVersion.of(21)
+
 1. git clone LCL0724
 
 2. ./gradlew clean build under folder LCL0724
