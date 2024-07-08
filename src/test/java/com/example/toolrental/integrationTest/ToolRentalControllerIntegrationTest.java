@@ -3,7 +3,6 @@ package com.example.toolrental.integrationTest;
 import com.example.toolrental.controller.ToolRentalController;
 import com.example.toolrental.dto.CheckoutRequest;
 import com.example.toolrental.requestHelper.RequestHelper;
-import org.hibernate.annotations.processing.SQL;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
