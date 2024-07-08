@@ -7,7 +7,7 @@ import com.example.toolrental.exception.ToolRentalException;
 
 import com.example.toolrental.repository.ToolRepository;
 import com.example.toolrental.service.ToolRentalService;
-import com.example.toolrental.util.DateUtil;
+import com.example.toolrental.util.DayUtil;
 import com.example.toolrental.util.PriceUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,8 +45,8 @@ public class ToolRentalServiceImpl implements ToolRentalService {
                 throw new ToolRentalException(ErrorCodes.CODE_NOT_FOUND, code);
         }
         try {
-            Integer[] dateCategories = DateUtil.getCategorizeDates(startDate, dayCount);
-            int totalChargeDates = DateUtil.totalChargeDates(dateCategories, toolInfo.get().getToolType());
+            Integer[] dateCategories = DayUtil.getCategorizeDays(startDate, dayCount);
+            int totalChargeDates = DayUtil.totalChargeDay(dateCategories, toolInfo.get().getToolType());
             BigDecimal totalCharge = PriceUtil.totalCharge(totalChargeDates, toolInfo.get().getToolType().getDailyCharge());
             BigDecimal discountAmount = BigDecimal.valueOf(0);
             if (discount != 0) {

@@ -5,9 +5,10 @@ import com.example.toolrental.entity.ToolType;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
-public class DateUtil {
+public class DayUtil {
 
-    public static Integer [] getCategorizeDates(LocalDate startDate, int count){
+    //Put these dates into category of weekday, weekend, or is a holiday
+    public static Integer [] getCategorizeDays(LocalDate startDate, int count){
         int numberOfWeekDay =0;
         int numberOfWeekEnd =0;
         int numberOfHoliday =0;
@@ -26,14 +27,15 @@ public class DateUtil {
 
         }
         //Only three types
-        Integer [] categorizeDates = new Integer[3];
-        categorizeDates[0] = numberOfWeekDay;
-        categorizeDates[1] = numberOfWeekEnd;
-        categorizeDates[2] = numberOfHoliday;
-    return categorizeDates;
+        Integer [] categorizeDays = new Integer[3];
+        categorizeDays[0] = numberOfWeekDay;
+        categorizeDays[1] = numberOfWeekEnd;
+        categorizeDays[2] = numberOfHoliday;
+    return categorizeDays;
     }
 
-    public static int totalChargeDates(Integer [] categorizeDates, ToolType toolInfo){
+    //Calculate the total charge base on the toolInfo and categorize dates
+    public static int totalChargeDay(Integer [] categorizeDates, ToolType toolInfo){
         boolean isChargeWeekDay = toolInfo.isWeekdayCharge();
         boolean isChargeWeekEnd = toolInfo.isWeekendCharge();
         boolean isChargeHoliday = toolInfo.isHolidayCharge();

@@ -11,6 +11,7 @@ import java.time.format.DateTimeFormatter;
 @Configuration
 public class AppConfig {
 
+    //Springboot by default only has setting for date, not java8 localdate etc.
     @Bean
     public JavaTimeModule javaTimeModule() {
         JavaTimeModule module = new JavaTimeModule();

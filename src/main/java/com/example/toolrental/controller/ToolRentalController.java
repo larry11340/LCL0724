@@ -27,7 +27,7 @@ public class ToolRentalController {
         this.toolRentalService = toolRentalService;
     }
 
-    @PostMapping("/checkout")
+    @PostMapping("/v1/checkout")
     public ResponseEntity<RentalAgreement> postCheckout(@Valid @RequestBody CheckoutRequest request) throws ToolRentalException {
         logger.info("Entering postCheckout with code " + request.getCode() );
         RentalAgreement rg = toolRentalService.postCheckout(request.getCode(), request.getRentalDayCount(), request.getDiscountPercent(),request.getCheckoutDate());

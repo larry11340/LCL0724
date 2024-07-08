@@ -13,7 +13,7 @@ All 6 test cases in the document is in test.java.com.example.toolrental.integrat
 All other test is unit test for each layer.
 
 sample run request:
-POST http://localhost:8080/tool_rental_service/checkout
+POST http://localhost:8080/tool_rental_service/v1/checkout
 with body json:
 {
 "code": "",
