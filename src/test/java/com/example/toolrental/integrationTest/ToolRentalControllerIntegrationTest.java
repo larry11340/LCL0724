@@ -85,9 +85,9 @@ public class ToolRentalControllerIntegrationTest {
                 .expectStatus().isOk().expectBody().jsonPath("code").isEqualTo("JAKD").jsonPath("type").isEqualTo("Jackhammer")
                 .jsonPath("brand").isEqualTo("DeWalt").jsonPath("rentalDays").isEqualTo(6)
                 .jsonPath("checkoutDate").isEqualTo("09/03/15").jsonPath("dueDate").isEqualTo("09/09/15")
-                .jsonPath("dailyRentalCharge").isEqualTo(BigDecimal.valueOf(2.99)).jsonPath("chargeDays").isEqualTo(4)
-                .jsonPath("preDiscountCharge").isEqualTo(BigDecimal.valueOf(11.96)).jsonPath("discountPercentage").isEqualTo(0)
-                .jsonPath("discountAmount").isEqualTo(BigDecimal.valueOf(0)).jsonPath("finalCharge").isEqualTo(BigDecimal.valueOf(11.96));
+                .jsonPath("dailyRentalCharge").isEqualTo(BigDecimal.valueOf(2.99)).jsonPath("chargeDays").isEqualTo(3)
+                .jsonPath("preDiscountCharge").isEqualTo(BigDecimal.valueOf(8.97)).jsonPath("discountPercentage").isEqualTo(0)
+                .jsonPath("discountAmount").isEqualTo(BigDecimal.valueOf(0)).jsonPath("finalCharge").isEqualTo(BigDecimal.valueOf(8.97));
     }
 
     @Test
@@ -98,9 +98,9 @@ public class ToolRentalControllerIntegrationTest {
                 .expectStatus().isOk().expectBody().jsonPath("code").isEqualTo("JAKR").jsonPath("type").isEqualTo("Jackhammer")
                 .jsonPath("brand").isEqualTo("Ridgid").jsonPath("rentalDays").isEqualTo(9)
                 .jsonPath("checkoutDate").isEqualTo("07/02/15").jsonPath("dueDate").isEqualTo("07/11/15")
-                .jsonPath("dailyRentalCharge").isEqualTo(BigDecimal.valueOf(2.99)).jsonPath("chargeDays").isEqualTo(7)
-                .jsonPath("preDiscountCharge").isEqualTo(BigDecimal.valueOf(20.93)).jsonPath("discountPercentage").isEqualTo(0)
-                .jsonPath("discountAmount").isEqualTo(BigDecimal.valueOf(0)).jsonPath("finalCharge").isEqualTo(BigDecimal.valueOf(20.93));
+                .jsonPath("dailyRentalCharge").isEqualTo(BigDecimal.valueOf(2.99)).jsonPath("chargeDays").isEqualTo(6)
+                .jsonPath("preDiscountCharge").isEqualTo(BigDecimal.valueOf(17.94)).jsonPath("discountPercentage").isEqualTo(0)
+                .jsonPath("discountAmount").isEqualTo(BigDecimal.valueOf(0)).jsonPath("finalCharge").isEqualTo(BigDecimal.valueOf(17.94));
     }
 
     @Test
@@ -111,8 +111,8 @@ public class ToolRentalControllerIntegrationTest {
                 .expectStatus().isOk().expectBody().jsonPath("code").isEqualTo("JAKR").jsonPath("type").isEqualTo("Jackhammer")
                 .jsonPath("brand").isEqualTo("Ridgid").jsonPath("rentalDays").isEqualTo(4)
                 .jsonPath("checkoutDate").isEqualTo("07/02/20").jsonPath("dueDate").isEqualTo("07/06/20")
-                .jsonPath("dailyRentalCharge").isEqualTo(BigDecimal.valueOf(2.99)).jsonPath("chargeDays").isEqualTo(2)
-                .jsonPath("preDiscountCharge").isEqualTo(BigDecimal.valueOf(5.98)).jsonPath("discountPercentage").isEqualTo(50)
-                .jsonPath("discountAmount").isEqualTo(BigDecimal.valueOf(2.99)).jsonPath("finalCharge").isEqualTo(BigDecimal.valueOf(2.99));
+                .jsonPath("dailyRentalCharge").isEqualTo(BigDecimal.valueOf(2.99)).jsonPath("chargeDays").isEqualTo(1)
+                .jsonPath("preDiscountCharge").isEqualTo(BigDecimal.valueOf(2.99)).jsonPath("discountPercentage").isEqualTo(50)
+                .jsonPath("discountAmount").isEqualTo(BigDecimal.valueOf(1.5)).jsonPath("finalCharge").isEqualTo(BigDecimal.valueOf(1.49));
     }
 }

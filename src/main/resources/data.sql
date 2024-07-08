@@ -18,9 +18,9 @@ REFERENCES Tool_Type(type)
 INSERT INTO Tool_Type(type,daily_Charge,is_WeekDay_Charge,is_WeekEnd_Charge,is_Holiday_Charge )
 values('Chainsaw',1.49,true, false,true);
 INSERT INTO Tool_Type(type,daily_Charge,is_WeekDay_Charge,is_WeekEnd_Charge,is_Holiday_Charge )
-values('Ladder',1.99,true, false,true);
+values('Ladder',1.99,true, true,false);
 INSERT INTO Tool_Type(type,daily_Charge,is_WeekDay_Charge,is_WeekEnd_Charge,is_Holiday_Charge )
-values('Jackhammer',2.99,true, false,true);
+values('Jackhammer',2.99,true, false,false);
 
 INSERT INTO Tool(code, tool_type, brand) values('CHNS', 'Chainsaw', 'Stihl');
 INSERT INTO Tool(code, tool_type, brand)
