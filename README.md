@@ -1,10 +1,11 @@
 # LCL0724
 This is sample Tool Rental Service application
 Steps to compile and run
-git clone LCL0724
 
-do ./gradlew clean build
-then do ./gradlew run to run application
+1. git clone LCL0724
+
+2. ./gradlew clean build in folder LCL0724
+3. ./gradlew run to run application in folder LCL0724
 
 When do a ./gradlew clean build all the test case should ran/passed
 
