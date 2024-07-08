@@ -3,6 +3,7 @@ package com.example.toolrental.integrationTest;
 import com.example.toolrental.controller.ToolRentalController;
 import com.example.toolrental.dto.CheckoutRequest;
 import com.example.toolrental.requestHelper.RequestHelper;
+import org.hibernate.annotations.processing.SQL;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,17 +11,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.BodyInserters;
 
 import java.math.BigDecimal;
+
+import static org.springframework.test.context.jdbc.Sql.ExecutionPhase.BEFORE_TEST_CLASS;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureWebTestClient
 @TestPropertySource(
         locations = "classpath:application-test.properties")
+@ActiveProfiles("test")
+@Sql(value = "classpath:/data-test.sql", executionPhase = BEFORE_TEST_CLASS )
 public class ToolRentalControllerIntegrationTest {
 
     @Autowired
