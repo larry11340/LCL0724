@@ -25,16 +25,6 @@ public class ToolRentalException extends Exception {
         this.params = args;
         this.errorCodes = code;
     }
-    public ToolRentalException(Throwable cause, ErrorCodes code, Object ... args){
-        super(cause);
-        this.errorCodes = code;
-        this.params = args;
-    }
-    public ToolRentalException(Throwable cause, String message, ErrorCodes code, Object... args){
-        super(message, cause);
-        this.errorCodes = code;
-        this.params = args;
-    }
 
 
 }
